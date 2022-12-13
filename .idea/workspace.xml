@@ -4,9 +4,7 @@
     <list default="true" id="d9bf0502-dfca-45c0-a7c1-90d3429aab5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pharmacy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +60,25 @@
       <option name="presentableId" value="Default" />
       <updated>1670832836893</updated>
       <workItem from="1670832839327" duration="8880000" />
-      <workItem from="1670844566268" duration="1754000" />
+      <workItem from="1670844566268" duration="2403000" />
+      <workItem from="1670936021337" duration="28000" />
+      <workItem from="1670936059297" duration="1903000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1670846372756</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670846372756</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

@@ -1,6 +1,6 @@
-import java.time.chrono.ChronoLocalDate;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,9 +33,21 @@ public class Main {
         printStudentsWithoutLowGrades(students);
         */
 
-        Pharmacy pharmacy1 = new Pharmacy("ashvaganda", 10, 3, new L);
-        Pharmacy pharmacy2 = new Pharmacy("nurofen", 4, 99, "11/14/2055");
-        Pharmacy pharmacy3 = new Pharmacy("stromba", 7, 58, "09/22/2034");
+        Scanner scanner = new Scanner(System.in);
+
+        int choose;
+
+
+        System.out.println("1. Insert data");
+        System.out.println("2. Print data");
+        System.out.println("3. Print data with price below 10lv");
+        System.out.println("4. Print data with price above 15lv");
+        System.out.println("5. Print data with expiration date");
+        System.out.print("Choose: "); choose = scanner.nextInt();
+
+        Pharmacy pharmacy1 = new Pharmacy("ashvaganda", 10, 3, LocalDate.now());
+        Pharmacy pharmacy2 = new Pharmacy("nurofen", 4, 99, LocalDate.now());
+        Pharmacy pharmacy3 = new Pharmacy("stromba", 7, 58, LocalDate.now());
 
         ArrayList<Pharmacy> pharmacies = new ArrayList<>();
 
@@ -43,11 +55,45 @@ public class Main {
         pharmacies.add(pharmacy2);
         pharmacies.add(pharmacy3);
 
-        printPharmacyWithLowerPriceThanFive(pharmacies);
+        switch (choose) {
+            case 1: insertData(pharmacies);
+                break;
+            case 2: printAllData(pharmacies);
+                break;
+            case 3:  printAllMedicinesWithPriceHigherThan15(pharmacies);
+                break;
+            case 4:  printAllMedicinesWithLowerPriceThan10(pharmacies);
+                break;
+            case 5:  printPharmaciesWithExpirationDate(pharmacies);
+                break;
+            default:
+                System.out.println("Invalid option!");
 
-        printAllMedicinesOnQuantities(pharmacies);
+        }
+    }
 
+    public static void insertData(ArrayList<Pharmacy> pharmacies) {
+        Scanner scanner = new Scanner(System.in);
+        Pharmacy pharmacy = new Pharmacy();
 
+        String name;
+        double price;
+        int quantity;
+
+        System.out.println();
+        System.out.print("Name: "); name = scanner.nextLine(); pharmacy.name = name;
+        System.out.println();
+        System.out.print("Price: "); price = scanner.nextDouble(); pharmacy.price = price;
+        System.out.println();
+        System.out.print("Quantity: "); quantity = scanner.nextInt(); pharmacy.quantity = quantity;
+        pharmacy.expirationDate = LocalDate.now();
+        pharmacies.add(pharmacy);
+    }
+
+    public static void printAllData(ArrayList<Pharmacy> pharmacies) {
+        for (Pharmacy p : pharmacies) {
+            System.out.println(p.toString());
+        }
     }
 
     public static void printStudents(ArrayList<Student> students) {
@@ -65,25 +111,25 @@ public class Main {
         }
     }
 
-    public static void printPharmacyWithLowerPriceThanFive(ArrayList<Pharmacy> pharmacies) {
+    public static void printAllMedicinesWithPriceHigherThan15(ArrayList<Pharmacy> pharmacies) {
 
         ArrayList<Pharmacy> newPharmacies = new ArrayList<>();
 
         for (Pharmacy p : pharmacies) {
-            if(p.price > 5) {
+            if(p.price > 15) {
                 newPharmacies.add(p);
             }
         }
 
         for (Pharmacy p : newPharmacies) {
-            System.out.println(p.toString());
+            System.out.println(p.name);
         }
     }
 
-    public static void printAllMedicinesOnQuantities(ArrayList<Pharmacy> pharmacies){
+    public static void printAllMedicinesWithLowerPriceThan10(ArrayList<Pharmacy> pharmacies){
         ArrayList<Pharmacy> newPharmacies = new ArrayList<>();
         for(Pharmacy p : pharmacies){
-            if(p.quantity < 10){
+            if(p.price < 10){
                 newPharmacies.add(p);
             }
         }
@@ -97,10 +143,10 @@ public class Main {
 
         ArrayList<Pharmacy> newPharmacies = new ArrayList<>();
 
-        String date = "10/10/2055";
+        LocalDate date = LocalDate.of(2033, 12, 12);
 
         for(Pharmacy p : pharmacies){
-            if(p.expirationDate ){
+            if(p.expirationDate.equals(date)){
                 newPharmacies.add(p);
             }
         }

@@ -15,6 +15,10 @@ public class Pharmacy {
         this.expirationDate = expirationDate;
     }
 
+    public Pharmacy() {
+
+    }
+
     @Override
     public String toString() {
         return "Pharmacy{" +
